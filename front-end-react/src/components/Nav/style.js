@@ -23,7 +23,7 @@ export const List = styled.li`
 export const Link = styled.a`
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-left: 4px;
 `;
