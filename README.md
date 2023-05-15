@@ -15,16 +15,16 @@ O sistema desenvolvido atende aos seguintes requisitos:
 - Back-end em Node.js: Responsável por implementar todas as regras definidas e lógica de negócio.  
 - Front-end em React.js: Utilizado pelo usuário para interagir com a ferramenta.  
 - Código em Javascript ou TypeScript (preferencialmente).  
-Banco de dados MySQL (versão 5 ou 8) para armazenar os dados dos produtos.  
-O sistema deve permitir o carregamento de um arquivo de precificação em formato CSV.  
-O sistema deve possuir um botão chamado "VALIDAR".  
-Ao clicar no botão "VALIDAR", o sistema deve ler o arquivo e realizar as seguintes verificações:  
-Verificar se todos os campos necessários estão presentes.  
-Verificar se os códigos de produtos informados existem no banco de dados.  
-Verificar se os preços estão preenchidos e são valores numéricos válidos.  
-Verificar se o arquivo respeita as regras descritas no cenário.  
-Ao final da validação, o sistema deve exibir as informações dos produtos enviados, incluindo Código, Nome, Preço Atual e Novo Preço.  
-Caso uma ou mais regras de validação tenham sido quebradas, o sistema deve exibir ao lado de cada produto qual regra foi violada.  
-O sistema deve possuir um botão "ATUALIZAR", que só ficará habilitado se todos os produtos do arquivo estiverem validados e sem regras quebradas.  
-Ao clicar no botão "ATUALIZAR", o sistema deve salvar os novos preços no banco de dados e estar pronto para receber um novo arquivo.  
-O preço de custo dos pacotes deve ser atualizado como a soma dos custos dos seus componentes. Os preços de custo dos produtos que não são pacotes não devem ser atualizados.  
+- Banco de dados MySQL (versão 5 ou 8) para armazenar os dados dos produtos.  
+- O sistema deve permitir o carregamento de um arquivo de precificação em formato CSV.  
+- O sistema deve possuir um botão chamado "VALIDAR".  
+- Ao clicar no botão "VALIDAR", o sistema deve ler o arquivo e realizar as seguintes verificações:  
+  - Verificar se todos os campos necessários estão presentes.  
+  - Verificar se os códigos de produtos informados existem no banco de dados.  
+  - Verificar se os preços estão preenchidos e são valores numéricos válidos.  
+  - Verificar se o arquivo respeita as regras descritas no cenário.  
+  - Ao final da validação, o sistema deve exibir as informações dos produtos enviados, incluindo Código, Nome, Preço Atual e Novo Preço.    
+- Caso uma ou mais regras de validação tenham sido quebradas, o sistema deve exibir ao lado de cada produto qual regra foi violada.  
+- O sistema deve possuir um botão "ATUALIZAR", que só ficará habilitado se todos os produtos do arquivo estiverem validados e sem regras quebradas.  
+- Ao clicar no botão "ATUALIZAR", o sistema deve salvar os novos preços no banco de dados e estar pronto para receber um novo arquivo.  
+- O preço de custo dos pacotes deve ser atualizado como a soma dos custos dos seus componentes. Os preços de custo dos produtos que não são pacotes não devem ser atualizados.  
