@@ -45,14 +45,14 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de dese
 2. Acesse o diretório do projeto:    
 `cd shopper-teste`  
 3. Instale as dependências do back-end:  
-`cd back-end-express    
+`cd back-end-express      
 npm install`    
 4. Importe o banco de dados: 
 Execute o script database.sql no seu servidor MySQL para criar a estrutura do banco de dados e preencher a tabela de produtos.  
 5. Inicie o servidor do back-end:  
 `npm start`    
 6. Instale as dependências do front-end:    
-`cd ../front-end-react    
+`cd ../front-end-react      
 npm install`  
 7. Inicie o servidor do front-end:    
 `npm start`    
