@@ -41,21 +41,21 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de dese
 ## Passos de instalação
 
 1. Clone o repositório do projeto:  
-`git clone <URL_DO_REPOSITÓRIO>`  
+`git clone <URL_DO_REPOSITÓRIO>`    
 2. Acesse o diretório do projeto:    
-cd shopper-teste-tecnico  
+`cd shopper-teste`  
 3. Instale as dependências do back-end:  
-cd backend  
-npm install  
+`cd back-end-express    
+npm install`    
 4. Importe o banco de dados: 
 Execute o script database.sql no seu servidor MySQL para criar a estrutura do banco de dados e preencher a tabela de produtos.  
 5. Inicie o servidor do back-end:  
-npm start  
+`npm start`    
 6. Instale as dependências do front-end:    
-cd ../frontend  
-npm install  
+`cd ../front-end-react    
+npm install`  
 7. Inicie o servidor do front-end:    
-npm start  
+`npm start`    
 8. Acesse a aplicação no navegador:  
 
 ## Como utilizar a ferramenta  
