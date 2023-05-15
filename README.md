@@ -41,7 +41,7 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de dese
 ## Passos de instalação
 
 1. Clone o repositório do projeto:  
-git clone <URL_DO_REPOSITÓRIO>  
+`git clone <URL_DO_REPOSITÓRIO>`  
 2. Acesse o diretório do projeto:    
 cd shopper-teste-tecnico  
 3. Instale as dependências do back-end:  
