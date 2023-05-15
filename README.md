@@ -28,3 +28,41 @@ O sistema desenvolvido atende aos seguintes requisitos:
 - O sistema deve possuir um botão "ATUALIZAR", que só ficará habilitado se todos os produtos do arquivo estiverem validados e sem regras quebradas.  
 - Ao clicar no botão "ATUALIZAR", o sistema deve salvar os novos preços no banco de dados e estar pronto para receber um novo arquivo.  
 - O preço de custo dos pacotes deve ser atualizado como a soma dos custos dos seus componentes. Os preços de custo dos produtos que não são pacotes não devem ser atualizados.  
+
+## Como executar o projeto  
+Para executar o projeto localmente, siga as instruções abaixo:  
+
+## Pré-requisitos  
+Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:  
+
+1. Node.js (versão X.X.X)
+2. MySQL (versão 5 ou 8) 
+
+## Passos de instalação
+
+1. Clone o repositório do projeto:  
+git clone <URL_DO_REPOSITÓRIO>  
+2. Acesse o diretório do projeto:    
+cd shopper-teste-tecnico  
+3. Instale as dependências do back-end:  
+cd backend  
+npm install  
+4. Importe o banco de dados: 
+Execute o script database.sql no seu servidor MySQL para criar a estrutura do banco de dados e preencher a tabela de produtos.  
+5. Inicie o servidor do back-end:  
+npm start  
+6. Instale as dependências do front-end:    
+cd ../frontend  
+npm install  
+7. Inicie o servidor do front-end:    
+npm start  
+8. Acesse a aplicação no navegador:  
+
+## Como utilizar a ferramenta  
+1. Faça o upload do arquivo CSV contendo as atualizações de preços dos produtos.  
+2. Clique no botão "VALIDAR" para realizar as verificações e validar os dados do arquivo.  
+3. Os produtos serão listados na tela, exibindo as informações: Código, Nome, Preço Atual e Novo Preço.  
+4. Caso haja alguma violação das regras de validação, a mensagem de erro correspondente será exibida ao lado do produto.  
+5. Se todos os produtos estiverem validados, o botão "ATUALIZAR" será habilitado.  
+6. Clique no botão "ATUALIZAR" para salvar os novos preços no banco de dados.  
+7. O sistema estará pronto para receber um novo arquivo de atualização de preços.  
