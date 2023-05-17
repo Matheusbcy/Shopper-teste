@@ -18,12 +18,15 @@ import {
 import Papa from "papaparse";
 import axios from "axios";
 import { formataValor } from "../../utils/FormatarValor";
+import { TbCheck } from "react-icons/tb"
+import { MdDoNotDisturbOn } from "react-icons/md"
 
 function EditPrice() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [listProd, setListProd] = useState([]);
   const [listProdUpdate, setProdUpdate] = useState([]);
 
+  console.log(listProdUpdate);
   const handleFile = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -106,12 +109,18 @@ function EditPrice() {
               row.new_price > result.data[0].sales_price - salesPrice &&
               row.new_price < result.data[0].sales_price + salesPrice
             ) {
-              prodUpdate.push(result.data[0]);
+              const newProdUpdate = result.data[0];
+              newProdUpdate.error = 0;
+              prodUpdate.push(newProdUpdate);
             } else {
-              alert(`O Produto  -- ${result.data[0].name.toLowerCase()} --  não atende a verificação de porcentagem.`)
+              const newProdUpdateErro1 = result.data[0];
+              newProdUpdateErro1.error = 1;
+              prodUpdate.push(newProdUpdateErro1);
             }
           } else {
-            alert(`Produto não passou nas validações: ${result.data[0].name.toLowerCase()}`);
+            const newProdUpdateErro2 = result.data[0];
+            newProdUpdateErro2.error = 2;
+            prodUpdate.push(newProdUpdateErro2);
           }
         }
       })
@@ -125,9 +134,13 @@ function EditPrice() {
     fetchParseData();
   };
 
+  const prodPassValidation = listProdUpdate.filter((prod) => {
+    return prod.error === 0;
+  });
+
   async function sendDataBack() {
     try {
-      listProdUpdate.map(async (prod) => {
+      prodPassValidation.map(async (prod) => {
         await axios.put(`http://localhost:3003/products/${prod.code}`, {
           new_price: getNewPrice(prod.code),
         });
@@ -166,7 +179,7 @@ function EditPrice() {
       </SubmitButton>
     );
   }
-  
+
   return (
     <ContainerEditProd>
       <ContainerInfEdit>
@@ -182,8 +195,8 @@ function EditPrice() {
             accept=".csv"
             onChange={handleFile}
           />
-          {listProdUpdate.length > 0 ? (
-            <p>{listProdUpdate.length} produtos passaram na validação</p>
+          {prodPassValidation.length > 0 ? (
+            <p>{prodPassValidation.length} produtos passaram na validação</p>
           ) : (
             <p>Produtos ainda não validados</p>
           )}
@@ -216,6 +229,12 @@ function EditPrice() {
                 <TableHeader>Novo Preço</TableHeader>
                 <TableItem>
                   {formataValor(parseFloat(getNewPrice(prod.code)))}
+                </TableItem>
+              </div>
+              <div>
+                <TableHeader>Validação</TableHeader>
+                <TableItem>
+                  {prod.error === 0 ? <TbCheck size={20} color="green"/> : prod.error === 1 ? <p><MdDoNotDisturbOn size={20} color="red"/> Porcentagem </p> : <p><MdDoNotDisturbOn size={20} color="red"/> Custo</p>}
                 </TableItem>
               </div>
             </Flex>
